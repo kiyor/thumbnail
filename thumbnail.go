@@ -67,10 +67,8 @@ func (a *Agent) Thumbnail(file string) error {
 	var fp string
 	if strings.HasPrefix(file, "http") {
 		fp = filepath.Base(file)
-		log.Println("is url")
 	} else {
 		fp = file
-		log.Println("is local")
 	}
 
 	err = a.Convert(tmpPath, fp+".jpg")
