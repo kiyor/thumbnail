@@ -56,6 +56,12 @@ func (a *Agent) Convert(dir, jpg string) error {
 	if err != nil {
 		return err
 	}
+	if a.userEnabled {
+		err = os.Chown(jpg, a.user[0], a.user[1])
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 

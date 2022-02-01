@@ -23,7 +23,9 @@ func init() {
 
 // Agent for thumbnail
 type Agent struct {
-	Slice int
+	Slice       int
+	user        [2]int
+	userEnabled bool
 }
 
 // NewAgent for thumbnail
@@ -31,6 +33,11 @@ func NewAgent() *Agent {
 	return &Agent{
 		Slice: 60,
 	}
+}
+
+func (a *Agent) SetUser(u, g int) {
+	a.user = [2]int{u, g}
+	a.userEnabled = true
 }
 
 // Thumbnail ...
