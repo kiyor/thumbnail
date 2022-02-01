@@ -42,7 +42,7 @@ func (a *Agent) SetUser(u, g int) {
 
 // Thumbnail ...
 func (a *Agent) Thumbnail(file string) error {
-	tmpPath := filepath.Join(tmpdir, fmt.Sprintf("%d", time.Now().Unix()))
+	tmpPath := filepath.Join(tmpdir, fmt.Sprintf("%d", time.Now().UnixNano()))
 	err := os.Mkdir(tmpPath, 0755)
 	if err != nil {
 		log.Println(err.Error())

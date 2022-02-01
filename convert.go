@@ -5,6 +5,7 @@ import (
 	"image/color"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	_ "image/jpeg"
@@ -28,6 +29,7 @@ func (a *Agent) Convert(dir, jpg string) error {
 			files = append(files, filepath.Join(dir, v.Name()))
 		}
 	}
+	sort.Strings(files)
 	var thumbnails []image.Image
 	var width, height int
 	for _, file := range files {
