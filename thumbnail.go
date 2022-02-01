@@ -35,9 +35,10 @@ func NewAgent() *Agent {
 	}
 }
 
-func (a *Agent) SetUser(u, g int) {
+func (a *Agent) SetUser(u, g int) *Agent {
 	a.user = [2]int{u, g}
 	a.userEnabled = true
+	return a
 }
 
 // Thumbnail ...
